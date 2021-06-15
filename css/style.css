@@ -1,0 +1,495 @@
+:root {
+    --color: #38728d;
+}
+
+
+/*fonts >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+@font-face {
+    font-family: main-font;
+    src: url("../fonts/JuliusSansOne-Regular.ttf");
+}
+
+@font-face {
+    font-family: seco-font;
+    src: url("../fonts/AbrilFatface-Regular.ttf");
+}
+/*general*/
+.icon{
+    cursor: pointer;
+}
+/*normal screen >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+nav{
+    background-image: linear-gradient(to bottom,#eee,transparent);
+}
+    .logo-title {
+        font-family: main-font;
+        font-size: x-large;
+    }
+
+    ul {
+        font-family: main-font;
+        font-weight: 700;
+        font-size: x-large;
+    }
+
+    ul li a:hover {
+        color: black !important
+    }
+
+    ul li {
+        position: relative;
+    }
+
+    ul li a::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0%;
+        height: 4px;
+        background-color: gray;
+        transform: translate(-50%, -50%);
+        transition: width 0.5s ease-in-out
+    }
+
+    ul li a:hover::after {
+        width: 70%;
+    }
+
+    a .bright {
+        position: relative;
+        overflow: hidden;
+    }
+
+    a .bright-move {
+        width: 90px;
+        height: 30px;
+        background-image: linear-gradient(to top, rgba(255, 255, 255, 0.849), rgba(255, 255, 255, 0.1));
+        background-blend-mode: soft-light;
+        position: absolute;
+        top: -10%;
+        left: -50%;
+        transform: rotate(-45deg);
+        z-index: 101;
+        animation-name: bright;
+        animation-iteration-count: infinite;
+        animation-duration: 5s;
+        animation-delay: 5s;
+    }
+
+    .wish {
+        z-index: 300;
+    }
+
+    .tip-love,
+    .tip-buy,
+    .tip-search {
+        position: relative;
+    }
+
+    .tip-love::after,
+    .tip-buy::after,
+    .tip-search::after {
+        content: "";
+        position: absolute;
+        top: 30px;
+        left: 0;
+        width: 150px;
+        height: 30px;
+        background-color: rgb(173, 173, 173);
+        display: none;
+        text-align: center;
+        transform: translate(-75px, 0);
+    }
+
+    .tip-love:hover::after {
+        display: block;
+        content: "Add to wish list";
+        color: white;
+    }
+
+    .tip-buy:hover::after {
+        display: block;
+        content: "Perchase";
+        color: white;
+    }
+
+    .tip-search:hover::after {
+        display: block;
+        content: "Search product";
+        color: white;
+    }
+
+
+
+    .tip-love::before,
+    .tip-buy::before,
+    .tip-search::before {
+        content: "";
+        position: absolute;
+        top: 25px;
+        left: 4px;
+        width: 10px;
+        height: 10px;
+        background-color: rgb(173, 173, 173);
+        transform: rotate(45deg);
+        display: none;
+
+    }
+
+    .tip-love:hover::before {
+        display: block;
+        z-index: 250;
+    }
+
+    .tip-buy:hover::before {
+        display: block;
+        z-index: 250;
+    }
+
+    .tip-search:hover::before {
+        display: block;
+        z-index: 250;
+    }
+/*animations >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+/*animation 1 bright >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+    @keyframes bright {
+        0% {
+            top: -10%;
+            left: -50%;
+        }
+
+        100% {
+            top: 100%;
+            left: 20%;
+        }
+    }
+
+
+
+
+    /****  section caresoul ****/
+    .c-c {
+        z-index: 200;
+        width: 93%;
+        box-shadow: 5px 5px 60px rgba(194, 194, 194, 0.5), -5px -5px 60px rgba(194, 194, 194, 0.5);
+        position: relative;
+
+    }
+
+    .c-c img {
+        height: 500px;
+    }
+
+
+    .carousel-indicators {
+        position: absolute;
+        right: 0;
+        left: 0;
+        position: absolute !important;
+        bottom: -60px;
+    }
+
+    /*section 3*/
+    .text-color {
+        color: var(--color);
+    }
+
+    .head-title {
+        font-family: seco-font;
+        font-size: 50px;
+    }
+
+    .sec3-font {
+        font-family: main-font;
+    }
+
+    /*complex*/
+    .mother {
+        position: relative;
+        height: 100%;
+        display: block;
+        margin: auto;
+        /* background-color: chartreuse; */
+    }
+
+    .border-white {
+        box-sizing: border-box;
+        position: absolute;
+        display: block;
+        /* background-color: chocolate; */
+        top: 0;
+        left: 0;
+        width: 20%;
+        height: 15%;
+        border-top: solid 25px rgb(228, 228, 228) !important;
+        border-left: solid 25px rgb(228, 228, 228) !important;
+        border-top-left-radius: 15px;
+    }
+
+    .border-blue {
+        box-sizing: border-box;
+        position: absolute;
+        display: block;
+        /* background-color: chocolate; */
+        top: 9%;
+        left: 7%;
+        width: 40%;
+        height: 30%;
+        border-top: solid 40px var(--color) !important;
+        border-left: solid 40px var(--color) !important;
+        border-top-left-radius: 15px;
+    }
+
+    .shad {
+        box-sizing: border-box;
+        position: absolute;
+        display: block;
+        /* background-color: chocolate; */
+        top: 22%;
+        right: 18%;
+        width: 55%;
+        height: 100%;
+        min-width: 336.594px;
+        box-shadow: 5px 5px 15px rgba(194, 194, 194, 0.5), -5px -5px 15px rgba(194, 194, 194, 0.5);
+    }
+
+    .sqr-blue {
+        box-sizing: border-box;
+        position: absolute;
+        display: block;
+        background-color: var(--color);
+        bottom: 5%;
+        left: -2%;
+        width: 40%;
+        height: 60%;
+    }
+
+    .image {
+        box-sizing: border-box;
+        position: absolute;
+        display: block;
+        background-image: url("../imgs/khaled-ghareeb-ifzilsFFqOs-unsplash.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        top: 22%;
+        right: 18%;
+        width: 55%;
+        height: 100%;
+        min-width: 336.594px;
+    }
+
+    /* section 3 */
+    .sec3-ground{
+        background-image: url("../imgs/tile_background.png");
+        margin-top: 150px!important;
+    }
+
+    .img-highter {
+        height: 350px;
+        transition: all 0.5s ease-in-out;
+    }
+
+    .img-highter2 {
+        margin-top: 30px;
+        ;
+    }
+
+    .img-highter:hover{
+        transform: scale(1.1,1.1);
+        box-shadow: 2px 2px 10px var(--color),-2px -2px 10px var(--color);
+       
+    }
+    .text-decoration-none.text-color{
+        transition: all 0.5s ease-in-out;
+    }
+    .text-decoration-none.text-color:hover{
+        margin:0;
+        padding:0;
+        display: block;
+        width: 100%;
+        height: 100%;
+        color: white;
+        background-color: var(--color);
+    }
+
+    /*section 4*/
+
+    .sec4-img{
+        background-image: url("../imgs/vladimir-yelizarov-i4mD5Cybu28-unsplash.jpg");
+        background-size: 100%,50%;
+        background-position: top;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        height: 45vw;
+        border: 50px solid var(--color);
+        position:  relative;
+        min-height: 300px;
+    }
+    .sec4-img::after{
+        position: absolute;
+        top: 0;
+        right: -50px;
+        content:"";
+        width: 50px;
+        height: 100%;
+        background-image: linear-gradient(to top,transparent,white,transparent ) ;
+        animation-name: ligteness-after;
+        animation-iteration-count: infinite;
+        animation-duration: 5s;
+        animation-delay: 1s;
+    }
+
+    @keyframes ligteness-after {
+        from{
+            top: -100%;
+        }
+        to{
+            top: 200%;
+        }
+        
+    }
+
+    .sec4-img::before{
+        position: absolute;
+        left: 0;
+        bottom: -50px;
+        content:"";
+        width: 100%;
+        height: 50px;
+        background-image: linear-gradient(to right,transparent,white,transparent ) ;
+        animation-name: ligteness-before;
+        animation-iteration-count: infinite;
+        animation-duration: 5s;
+        animation-delay: 1s;
+
+    }
+    @keyframes ligteness-before {
+        from{
+            left: -100%;
+        }
+        to{
+            left: 200%;
+        }
+        
+    }
+
+    .fashion{
+    
+        font-size: 20rem;
+        position: absolute;
+        left: 200%;
+        bottom: 0;
+        text-shadow: 20px 20px var(--color),-20px -20px var(--color);
+        animation-name: fashion-act;
+        animation-iteration-count: infinite;
+        animation-duration: 15s;
+        animation-delay: 1s;
+        animation-timing-function: linear;
+    }
+
+    @keyframes fashion-act {
+        from{
+            left: 200%;
+        }
+        to{
+left: -200%;
+        }
+        
+    }
+
+        /*media query >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+        @media (max-width:1024px) {
+            .image {
+                right: 0 !important;
+            }
+    
+            .shad {
+                right: 0 !important;
+            }
+        }
+    
+    
+        @media (max-width:989px) {
+            .hide-me {
+                display: none;
+            }
+    
+            .navbar-nav.mb-2.mb-lg-0.ml-4.w-75.justify-content-evenly.mx-5 {
+                margin-left: 10px !important;
+                margin-right: 10px !important;
+            }
+    
+            .navbar.navbar-expand-lg.container {
+                background-color: #eee;
+                margin: 0px;
+                max-width: 100% !important;
+            }
+    
+            .container.pl5 {
+                padding-right: 50px !important;
+                padding-right: 50px !important;
+            }
+    
+            .c-c {
+                width: 100% !important;
+                height: 100%;
+            }
+    
+            .c-c img {
+                height: 500px !important;
+            }
+          
+    
+        }
+    
+        @media (max-width:768px) {
+            .c-c {
+                height: 80%;
+            }
+    
+            .c-c img {
+                height: 100% !important;
+            }
+    
+            .highter {
+                height: 500px;
+            }
+    
+            .highter2 {
+                margin-top: 146px;
+                ;
+            }
+            .sec3-ground{
+                margin-top: -50px!important;
+            }
+            .w-75 {
+                width: 100%!important;
+            }
+            .card-title {
+                margin-top: 1.5rem!important;
+            }
+            @keyframes fashion-act {
+                from{
+                    left: 40%;
+                    opacity: 0%;
+                    font-size: 3rem;
+                }
+                to{
+                    opacity: 100%;
+                    left:40%;
+                    font-size: 3rem;
+                }
+        }
+    
+        @media (max-width: 425px) {
+            .c-c {
+                height: 100%;
+            }
+        }
+    }
+
+    /*section 5*/
+    .section-5{
+        background-color: var(--color);
+    }
